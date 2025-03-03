@@ -8,6 +8,12 @@ double randNum(void);
 void srand(unsigned int seed);
 
 
+// generate random number
+double randNum(void){
+    return  ((double) rand()/RAND_MAX);
+}
+
+
 // main function
 int main(void){
     int n, n1 = 0, n2 = 0, n3 = 0, ntotal;
@@ -47,10 +53,10 @@ int main(void){
         "Ts-2: %d \n"
         "Ts-3: %d \n", n1, n2, n3);
 
-    // calculate and print proportions of each Ts Type
-    ntotal = n1 + n2 + n3;
-    double p1, p2, p3;
 
+    // calculate and print proportions of each Ts Type
+    ntotal = n1 + n2 + n3; 
+    double p1, p2, p3;
     p1 = ((double) n1 / ntotal) * 100;
     p2 = ((double) n2 / ntotal) * 100;
     p3 = ((double) n3 / ntotal) * 100;
@@ -64,7 +70,3 @@ int main(void){
     return 0;
 }
 
-// generate random number
-double randNum(void){
-  return  ((double) rand()/RAND_MAX);
-}
