@@ -28,23 +28,23 @@ int main(void){
 
     // seed random number generator with current time
     srand(time(0)); 
-    printf("\nRNG AND SERVICE TIME SIMULATION\n");
+    int ntrials = 1000; printf("\n RNG AND SERVICE TIME SIMULATION %d Trials \n", ntrials);
 
     // loop to generate random numbers
-    for (n = 1; n <= 100; n++){
+    for (n = 1; n <= ntrials; n++){
         r = randNum();
 
         if (r <= 0.35) {
             n1 += 1;
-            printf("Random number %d -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n);
+            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n, r);
         }
         else if (r > 0.35 && r <= 0.85) {
             n2 += 1;
-            printf("Random number %d -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n);
+            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n, r);
         }
         else {
             n3 += 1;
-            printf("Random number %d -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n);
+            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n, r);
         }
     }
 

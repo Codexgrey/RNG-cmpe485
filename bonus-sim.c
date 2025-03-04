@@ -30,23 +30,24 @@ int main(void){
     // loop to generate random numbers
     for (int i = 1; i <= 10; i++) {
         // seed random number generator with current time
-        srand(time(0)); 
-        printf("\n*Seeded RUN %d*\n", i);
+        int seed = time(0) + 1;
+        srand(seed); 
         
+        printf("\n*Seeded RUN %d*\n", i);
         for (n = 1; n <= 1000; n++){
             r = randNum();
     
             if (r <= 0.35) {
                 n1 += 1;
-                printf("Random number %d -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n);
+                printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n, r);
             }
             else if (r > 0.35 && r <= 0.85) {
                 n2 += 1;
-                printf("Random number %d -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n);
+                printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n, r);
             }
             else {
                 n3 += 1;
-                printf("Random number %d -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n);
+                printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n, r);
             }
         }
     }

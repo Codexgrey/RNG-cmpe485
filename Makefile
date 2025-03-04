@@ -9,7 +9,9 @@ clean:
 	rm sim bonus-sim results.doc
 
 run:
-	./sim >> results.doc && ./bonus-sim >> results.doc
+	./sim >> results.doc
+	sleep 2 
+	./bonus-sim >> results.doc
 #	./sim | tee results.txt
 #	./sim > results.txt
 
