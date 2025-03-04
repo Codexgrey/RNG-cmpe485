@@ -10,7 +10,7 @@ void srand(unsigned int seed);
 
 // generate random number
 double randNum(void){
-    return  ((double) rand()/RAND_MAX);
+    return  ((double)rand() / RAND_MAX);
 }
 
 
@@ -18,6 +18,7 @@ double randNum(void){
 int main(void){
     int n, n1 = 0, n2 = 0, n3 = 0, ntotal;
     double r;
+
     /*
         service time : probability : cumulative probability
         Ts-1 => 4 : 0.35 : 0.35
@@ -27,9 +28,10 @@ int main(void){
 
     // seed random number generator with current time
     srand(time(0)); 
+    printf("\nRANDOM NUMBER GENERATOR AND SERVICE TIME SIMULATION\n");
 
     // loop to generate random numbers
-    for (n=1; n<=100; n++){
+    for (n = 1; n <= 1000; n++){
         r = randNum();
 
         if (r <= 0.35) {
@@ -46,17 +48,16 @@ int main(void){
         }
     }
 
-
     // summary of results
     printf("\n Number of each Ts Type: \n"
         "Ts-1: %d \n"
         "Ts-2: %d \n"
         "Ts-3: %d \n", n1, n2, n3);
 
-
     // calculate and print proportions of each Ts Type
     ntotal = n1 + n2 + n3; 
     double p1, p2, p3;
+
     p1 = ((double) n1 / ntotal) * 100;
     p2 = ((double) n2 / ntotal) * 100;
     p3 = ((double) n3 / ntotal) * 100;
