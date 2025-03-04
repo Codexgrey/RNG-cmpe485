@@ -5,7 +5,7 @@
 - sim.exe       : compile code
 - Makefile      : config to help compile, test, clean (working dir) and run codes
 - test.sh       : simple script to test codes and report errors
-- results.doc   : test results
+- results.doc   : simulation results
 
 
 ## How-To Guide - LINUX
