@@ -29,14 +29,14 @@
 
 
 # If you have difficulty using Makefile, please run the following commands...
-  ## Create Results Doc
+## Create Results Doc
 - $ `touch results.doc`
 
-  ## Compile Code
+## Compile Code
 - $ `gcc sim.c -o sim && gcc bonus-sim.c -o bonus-sim`
 
-  ## Run code and append results to results file
+## Run code and append results to results file
 - $ `./sim >> results.doc && ./bonus-sim >> results.doc`
 
 
-  # Have a nice day...
+# Have a nice day...
