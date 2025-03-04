@@ -56,9 +56,9 @@ int main(void){
 
 
     printf("\n Averaged Summary of Results: \n"
-        "Ts-1: %d \n"
-        "Ts-2: %d \n"
-        "Ts-3: %d \n", n1/10, n2/10, n3/10);
+        "Ts-1(average of 10 runs): %d \n"
+        "Ts-2(average of 10 runs): %d \n"
+        "Ts-3(average of 10 runs): %d \n", n1/10, n2/10, n3/10);
 
     // calculate and print proportions of each Ts Type
     ntotal = n1 + n2 + n3; 
@@ -69,9 +69,9 @@ int main(void){
     p3 = ((double) n3 / ntotal) * 100;
 
     printf("\n Proportion of each Ts Type: \n"
-        "Ts-1: %f \n"
-        "Ts-2: %f \n"
-        "Ts-3: %f \n", p1, p2, p3);
+        "Ts-1: %f% \n"
+        "Ts-2: %f% \n"
+        "Ts-3: %f% \n", p1, p2, p3);
 
 
     return 0;

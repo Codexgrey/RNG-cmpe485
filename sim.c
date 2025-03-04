@@ -63,9 +63,9 @@ int main(void){
     p3 = ((double) n3 / ntotal) * 100;
 
     printf("\n Proportion of each Ts Type: \n"
-        "Ts-1: %f \n"
-        "Ts-2: %f \n"
-        "Ts-3: %f \n", p1, p2, p3);
+        "Ts-1: %f% \n"
+        "Ts-2: %f% \n"
+        "Ts-3: %f% \n", p1, p2, p3);
 
 
     return 0;
