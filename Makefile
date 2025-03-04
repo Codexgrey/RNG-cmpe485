@@ -1,11 +1,11 @@
 all: sim bonus-sim
 
-sim:
+sim: # compile sim bonus-sim, create results.doc
 	gcc sim.c -o sim
 	gcc bonus-sim.c -o bonus-sim
 	touch results.doc
 
-clean:
+clean: 
 	rm sim bonus-sim results.doc
 
 run:
