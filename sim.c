@@ -10,6 +10,7 @@ void srand(unsigned int seed);
 
 // generate random number
 double randNum(void){
+    
     return  ((double)rand() / RAND_MAX);
 }
 
