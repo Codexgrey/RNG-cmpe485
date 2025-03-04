@@ -8,7 +8,7 @@
 - results.doc   : simulation results
 
 
-# How-To Guide - LINUX
+# How-To Guide > LINUX
 - Clone repo via ssh (git clone https://github.com/Codexgrey/RNG-cmpe485)
 - Depending on your environment, use Makefile as follows;
 
