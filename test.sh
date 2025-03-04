@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./sim)
+output=$(./sim && ./bonus-sim)
 
 if [ $? -eq 0 ] ; then
   echo "Pass: Program exited zero"

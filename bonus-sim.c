@@ -26,33 +26,39 @@ int main(void){
         Ts-3 => 12 : 0.15 : 1.00
     */
 
-    // seed random number generator with current time
-    srand(time(0)); 
-    printf("\nRNG AND SERVICE TIME SIMULATION\n");
-
+    printf("\n**BONUS RNG, Service Time SIMULATION**");
     // loop to generate random numbers
-    for (n = 1; n <= 100; n++){
-        r = randNum();
-
-        if (r <= 0.35) {
-            n1 += 1;
-            printf("Random number %d -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n);
-        }
-        else if (r > 0.35 && r <= 0.85) {
-            n2 += 1;
-            printf("Random number %d -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n);
-        }
-        else {
-            n3 += 1;
-            printf("Random number %d -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n);
+    for (int i = 1; i <= 10; i++) {
+        // seed random number generator with current time
+        srand(time(0)); 
+        printf("\n*Seeded RUN %d*\n", i);
+        
+        for (n = 1; n <= 1000; n++){
+            r = randNum();
+    
+            if (r <= 0.35) {
+                n1 += 1;
+                printf("Random number %d -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n);
+            }
+            else if (r > 0.35 && r <= 0.85) {
+                n2 += 1;
+                printf("Random number %d -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n);
+            }
+            else {
+                n3 += 1;
+                printf("Random number %d -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n);
+            }
         }
     }
+    
 
     // summary of results
-    printf("\n Number of each Ts Type: \n"
+
+
+    printf("\n Averaged Summary of Results: \n"
         "Ts-1: %d \n"
         "Ts-2: %d \n"
-        "Ts-3: %d \n", n1, n2, n3);
+        "Ts-3: %d \n", n1/10, n2/10, n3/10);
 
     // calculate and print proportions of each Ts Type
     ntotal = n1 + n2 + n3; 
