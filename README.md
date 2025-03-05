@@ -31,10 +31,10 @@
 - $ `touch results.doc`
 
 ## Compile Code
-- $ `gcc sim.c -o sim 
+- $ `gcc sim.c -o sim`
 
 ## Run code and append results to results file
-- $ `./sim >> results.doc
+- $ `./sim >> results.doc`
 
 
 # Have a nice day...

@@ -36,6 +36,7 @@ int main(void){
     return 0;
 }
 
+
 void print_summary(int a, int b, int c){
     printf("\n Number of each Ts Type: \n"
             "Ts-1: %d \n"
