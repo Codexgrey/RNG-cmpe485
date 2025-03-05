@@ -1,6 +1,4 @@
 # List of files submitted
-- bonus-sim.c   : source code for bonus-sim
-- bonus-sim.exe : compiled code
 - sim.c         : source code for sim
 - sim.exe       : compile code
 - Makefile      : config to help compile, test, clean (working dir) and run codes
@@ -33,10 +31,10 @@
 - $ `touch results.doc`
 
 ## Compile Code
-- $ `gcc sim.c -o sim && gcc bonus-sim.c -o bonus-sim`
+- $ `gcc sim.c -o sim 
 
 ## Run code and append results to results file
-- $ `./sim >> results.doc && ./bonus-sim >> results.doc`
+- $ `./sim >> results.doc
 
 
 # Have a nice day...

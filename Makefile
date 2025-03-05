@@ -1,19 +1,16 @@
-all: sim bonus-sim
+all: sim
 
-sim: # compile sim bonus-sim, create results.doc
+sim: 
 	gcc sim.c -o sim
-	gcc bonus-sim.c -o bonus-sim
 	touch results.doc
 
 clean: 
-	rm sim bonus-sim results.doc
+	rm sim results.doc
 
 run:
 	./sim >> results.doc
-	sleep 2 
-	./bonus-sim >> results.doc
 #	./sim | tee results.txt
 #	./sim > results.txt
 
-test: sim bonus-sim
+test: sim
 	bash test.sh
