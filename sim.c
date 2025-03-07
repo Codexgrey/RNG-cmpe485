@@ -9,6 +9,7 @@ void srand(unsigned int seed);
 void sim100();
 void sim1000();
 void bonus_sim();
+void simloop(int *a, int *b, int *c, int d);
 void print_summary(int a, int b, int c);
 void print_avg_summary(int a, int b, int c);
 void print_probabilities(int a, int b, int c, int ntotal);
@@ -37,6 +38,27 @@ int main(void){
 }
 
 
+void simloop(int *a, int *b, int *c, int d){
+    // loop to generate random numbers
+    for (int n = 1; n <= d; n++){
+    double r = randNum();
+
+        if (r <= 0.35) {
+            *a += 1;
+            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n, r);
+        }
+        else if (r > 0.35 && r <= 0.85) {
+            *b += 1;
+            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n, r);
+        }
+        else {
+            *c += 1;
+            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n, r);
+        }
+    }
+}
+
+
 void print_summary(int a, int b, int c){
     printf("\n Number of each Ts Type: \n"
             "Ts-1: %d \n"
@@ -44,12 +66,14 @@ void print_summary(int a, int b, int c){
             "Ts-3: %d \n", a, b, c);
 } 
 
+
 void print_avg_summary(int a, int b, int c) {
     printf("\n Averaged Summary of Results: \n"
         "Ts-1(average of 10 runs): %d \n"
         "Ts-2(average of 10 runs): %d \n"
         "Ts-3(average of 10 runs): %d \n", a/10, b/10, c/10);
 }
+
 
 void print_probabilities(int a, int b, int c, int tt){
     // calculate percentage probabilities
@@ -64,102 +88,55 @@ void print_probabilities(int a, int b, int c, int tt){
             "Ts-3: %.3f% \n", p1, p2, p3);
 }
 
+
 // simulation with 100 trials
 void sim100() {
-    int n1 = 0, n2 = 0, n3 = 0, ntotal;
+    int x1 = 0, x2 = 0, x3 = 0, xtrials = 100, xtotal;
     // seed - current time + 100
     srand(time(0) + 100); 
     printf("\n RNG AND SERVICE TIME SIMULATION 100 Trials \n");
+    simloop(&x1, &x2, &x3, xtrials);
 
-    // loop to generate random numbers
-    for (int n = 1; n <= 100; n++){
-        double r = randNum();
-
-        if (r <= 0.35) {
-            n1 += 1;
-            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n, r);
-        }
-        else if (r > 0.35 && r <= 0.85) {
-            n2 += 1;
-            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n, r);
-        }
-        else {
-            n3 += 1;
-            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n, r);
-        }
-    }
     // total number of trials
-    ntotal = n1 + n2 + n3;
+    xtotal = x1 + x2 + x3;
 
     // summary of results
-    print_summary(n1, n2, n3);
+    print_summary(x1, x2, x3);
 
     // calculate and print proportions of each Ts Type
-    print_probabilities(n1, n2, n3, ntotal);
+    print_probabilities(x1, x2, x3, xtotal);
 }
 
 
 // simulation with 1000 trials
 void sim1000() {
-    int n1 = 0, n2 = 0, n3 = 0, ntotal;
+    int y1 = 0, y2 = 0, y3 = 0, ytrials = 1000, ytotal;
     // seed - current time + 1000
     srand(time(0) + 1000); 
     printf("\n RNG AND SERVICE TIME SIMULATION 1000 Trials \n");
+    simloop(&y1, &y2, &y3, ytrials);
 
-    // loop to generate random numbers
-    for (int n = 1; n <= 1000; n++){
-        double r = randNum();
-
-        if (r <= 0.35) {
-            n1 += 1;
-            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n, r);
-        }
-        else if (r > 0.35 && r <= 0.85) {
-            n2 += 1;
-            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n, r);
-        }
-        else {
-            n3 += 1;
-            printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n, r);
-        }
-    }
-   // total number of trials
-    ntotal = n1 + n2 + n3;
+    // total number of trials
+    ytotal = y1 + y2 + y3;
 
     // summary of results
-    print_summary(n1, n2, n3);
+    print_summary(y1, y2, y3);
 
     // calculate and print proportions of each Ts Type
-    print_probabilities(n1, n2, n3, ntotal);
+    print_probabilities(y1, y2, y3, ytotal);
 }
 
 
-// bonsus simulation for 10 seeded run and streams of 1000
+// bonsus simulation for 10 seeded runs and streams of 1000
 void bonus_sim() {
-    int n1 = 0, n2 = 0, n3 = 0, ntotal; 
+    int n1 = 0, n2 = 0, n3 = 0, ntrials = 1000, ntotal; 
 
     printf("\n**BONUS RNG, Service Time SIMULATION**");
-    // loop to generate random numbers
     for (int i = 1; i <= 10; i++) {
-        srand(time(0)); 
-        
+        // seeding each run
+        srand(time(0) + i); 
         printf("\n*Seeded RUN %d*\n", i);
-        for (int n = 1; n <= 1000; n++){
-            double r = randNum();
-    
-            if (r <= 0.35) {
-                n1 += 1;
-                printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-1 ( 4 mins.) \n", n, r);
-            }
-            else if (r > 0.35 && r <= 0.85) {
-                n2 += 1;
-                printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-2 ( 8 mins.) \n", n, r);
-            }
-            else {
-                n3 += 1;
-                printf("Random number %d = %f -> assigned Ts (Service time) -> Ts-3 (12 mins.) \n", n, r);
-            }
-        }
+        simloop(&n1, &n2, &n3, ntrials);
     }
     // total number of trials
     ntotal = n1 + n2 + n3;
