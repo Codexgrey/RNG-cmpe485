@@ -1,3 +1,36 @@
+/*
+    1. Problem
+    1.1 Sub-Problem-1
+    Write a “C” program to generate 100 random integers which can then be converted to random numbers (RNs) uniformly distributed between 0.0 and 1.0 i.e. U(0,1).
+    Hint:
+    - Use RAND_MAX to convert random integer to a random number.
+    - Uniformly distributed: means it is equally likely to generate any number in the range.
+
+    1.2 Sub-Problem-2
+    Use the Uniform Random Number Generator you have developed in (2.1) to solve the problem which is given below:
+    • Assume that there are just 3 possible values for Service Time (Ts) of customers arriving at a bank (with single server).
+    • Need to transform each RN to a service time of a given probability.
+    • Assume each customer spends either 4, 8 or 12 minutes at the bank.
+    • Proportion of each service duration is 35%, 50% and 15% respectively.
+
+    Write a random number generator which will generate 100 customers, 
+    display the numbers on the screen and count the number of each type 
+    (1, 2 or 3) of Ts generated. Your program should list them as:
+
+    2. Verification
+    Verify that the probabilities assigned to have roughly been met. 
+    Continue to run the same experiment by increasing the number of TSs to be generated to 1000. 
+    Comment on your new results and come to a conclusion. Compare with expected values and comment 
+    on the results.
+
+    Bonus
+    Repeat experiment used in the “verification” part above with 10 sets of different runs 
+    (using different seeds and streams of RNs)
+
+*/
+
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>

@@ -1,3 +1,9 @@
+# Objectives
+The objectives of this task are two-fold:
+- To better to understand random integer and random number generation.
+- To better understand Monte Carlo simulation through the generation of customer random service \ times according to certain probabilities.
+
+
 # List of files submitted
 - sim.c         : source code for sim
 - sim.exe       : compile code
